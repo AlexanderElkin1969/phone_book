@@ -5,6 +5,8 @@ import com.example.phone_book.repository.ContactRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class ContactServiceImpl implements ContactService{
 
@@ -40,4 +42,8 @@ public class ContactServiceImpl implements ContactService{
         return contact;
     }
 
+    @Override
+    public List<Contact> getAll() {
+        return repository.findAll();
+    }
 }
