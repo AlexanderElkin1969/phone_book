@@ -11,5 +11,6 @@ public interface ContactService {
     Contact updateContact(Contact contact);
     Contact deleteContact(Long id);
     List<Contact> getAll();
+    List<Contact> getAllByLastName(String lastName);
 
 }

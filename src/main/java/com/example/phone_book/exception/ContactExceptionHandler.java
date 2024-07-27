@@ -19,4 +19,11 @@ public class ContactExceptionHandler {
         logger.error("Element by this Id is absent.");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Element by this Id is absent. " + e.getMessage());
     }
+
+    @ExceptionHandler({IllegalArgumentException.class})
+    public ResponseEntity<?> handlerIllegalArgument(IllegalArgumentException e){
+        logger.error(e.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+    }
+
 }

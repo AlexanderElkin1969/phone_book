@@ -43,4 +43,10 @@ public class ContactController {
     public ResponseEntity<Collection<Contact>> getAll() {
         return ResponseEntity.ok(service.getAll());
     }
+
+    @GetMapping("all/by-last-name")
+    public ResponseEntity<Collection<Contact>> getAllByLastName(String lastName) {
+        return ResponseEntity.ok(service.getAllByLastName(lastName));
+    }
+
 }
